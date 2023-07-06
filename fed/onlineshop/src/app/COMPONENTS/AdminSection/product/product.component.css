@@ -1,0 +1,137 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif ;
+}
+.bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color:white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position:top;
+    top: 2500%;
+    left: 50%;
+    transform: translate(50%,20%);
+    z-index: 2;
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+  }
+.container{
+    padding:3em;
+    max-width:1000px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+ }
+   .product-container {
+   display: flex;
+   width: 134%;
+   padding-top: 1.5em;
+   margin-left: 10px;
+  }
+.product-form{
+
+ padding:3em;
+
+}
+.product-grid{
+    width:150%;
+
+    padding:3em;
+    margin-top:-2em;
+}
+form.form-group{
+    margin-bottom:1em;
+}
+form label{
+    display:block;
+    margin-top: 1em;
+    margin-bottom:1em;
+    font-weight:bold;
+    /*color: #f1f1f1;*/
+}
+form input[type="text"],form input[type="password"],form input[type="number"],form input [type="url"]{
+    /* width:500%;
+    padding:0.5em; */
+    margin-bottom:0.5em;
+    margin-right: 1em;
+    font-size:1.2em;
+}
+.form-group-inline{
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    /* justify-content: space-between; */
+}
+.form-group-inline div{
+    width:30%
+}
+
+form button{
+    background-color:green;
+    padding:0.5em 1em;
+    color:white;
+    border:none;
+    outline:none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size:1.2em;
+
+}
+button{
+    /* background-color: red; */
+    padding:0.5em 1em;
+
+}
+.product-row{
+    width:100%;
+    display:flex;
+    margin-bottom:0.2em;
+}
+.product-row-details{
+    background-color:rgb(248, 219, 178) ;
+    text-emphasis-color: black;
+    flex-grow:1;
+    padding:0.4em 1em;
+    display:flex;
+    justify-content:space-between ;
+    align-items: center;
+    margin-right:0.2em;
+    cursor:pointer;
+    /* content: normal; */
+}
+.product-row-action{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-row-action a{
+    display: block;
+    cursor: pointer;
+    padding: 1em;
+    background-color:crimson ;
+    color:white;
+    margin-left: 10px;
+}
+p{
+    color:#f1f1f1;
+}
+.grid{
+    color:#060606;
+    margin-left: 5px;
+}
+footer{
+    position:absolute;
+    bottom: -180px;
+    width:100%;
+    padding:1px;
+
+  }
+
+

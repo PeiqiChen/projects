@@ -1,0 +1,291 @@
+<nav class="navbar navbar-dark bg-dark" style="height: 74px;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img
+              src="https://play-lh.googleusercontent.com/tAgbpyJW4Yy3egbm_Kjh1EVfqUSkba1s5g5bitqsUvCqc1acmY08CbuTwSOGOOoLp68=s200"
+              class="me-2"
+              height="45"
+              alt="Logo"
+              loading="lazy"
+            />
+            <small><i><strong>Online Shop</strong></i></small>
+          </a>
+          <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" [routerLink]="['/checkout']" id="pills-back-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-back" type="button" role="tab" aria-controls="pills-back"
+                    aria-selected="false"><i class="fas fa-arrow-circle-left"></i></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" [routerLink]="['/login']" id="pills-login-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login"
+                    aria-selected="true"><i class="fas fa-user-circle"></i></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" [routerLink]="['/register']" id="pills-register-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register"
+                    aria-selected="false"><i class="fas fa-users"></i></button>
+            </li>
+
+
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" [routerLink]="['/product-display']" id="pills-back-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-back" type="button" role="tab" aria-controls="pills-back"
+                    aria-selected="false">Products</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" [routerLink]="['/home-page']" id="pills-back-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-back" type="button" role="tab" aria-controls="pills-back"
+                    aria-selected="false">Categories</button>
+
+            </li>
+
+            <li class="nav-item" role="presentation" style="align-items:left">
+                <button class="nav-link" [routerLink]="['/cart']" id="pills-back-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-back" type="button" role="tab" aria-controls="pills-back"
+                    aria-selected="false" style="-color:crimson; size: 2px; "><i class="fas fa-cart-plus"></i>
+                    <div class="badge bg-danger">
+                        {{totalItem}}
+                    </div>
+                </button>
+            </li>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" [routerLink]="['']" id="pills-register-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register"
+                    aria-selected="false" style="color:crimson" (click)="logout()"><i
+                        class="fas fa-sign-out-alt"></i>Logout</button>
+            </li>
+            <!-- <li class="nav-item" role="presentation">
+          <button class="nav-link" [routerLink]="['/']" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="false">Admin</button>
+        </li> -->
+
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+        </div>
+
+    </div>
+
+
+
+
+</nav>
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="leftside">
+
+      /> -->
+<br>
+
+
+<!-- <div class="rightside">
+        <form novalidate #form="ngForm" >
+
+        <h3 style="text-align:center">Payment Information</h3>
+       <br>
+        <label><strong>Card Owner Name</strong></label>
+        <input class="form-control form-control-lg " placeholder="Full Name"
+        name="CardOwnerName"
+        required >
+        <br>
+ <label><strong> Card Number </strong></label>
+        <input class="form-control form-control-lg " placeholder="16 Digit Card Number"
+        name="CardNumber"
+        required >
+<br>
+        <label><strong> Valid Till </strong></label>
+        <input class="form-control form-control-lg " type="date" placeholder="yyyy-mm-dd"
+
+        required>
+<br>
+        <label><strong>CVV </strong></label>
+        <input type="password" class= "form-control form-control-lg " placeholder="CVV"
+        name="CVV"
+        required >
+
+
+
+        <p></p>
+        <button routerLink="/place-order" class="button-1" type="submit"[disabled]="form.invalid"> PLace Order</button>
+        <br>
+        <hr> <p> OR </p>
+        <button routerLink="/place-order" class="button">Cash On Delivery</button>
+
+      </form>
+    </div> -->
+    <div style="width: -100px;height: 30px;">
+        <h5 style="margin-left:350px" class="mb-0"><strong><i class="fas fa-check-circle" style="color:rgb(251, 254, 251)"> Cart</i><i style="color:aliceblue">------------------------------------</i></strong><strong><i class="fas fa-check-circle"  style="color:rgb(246, 248, 251)"> Address</i><i style="color:aliceblue">---------------------------------</i></strong><strong><i class="fas fa-dot-circle" style="color:rgb(249, 245, 245)"> Payment</i></strong></h5>
+      </div>
+<div class='container-fluid mt-3 mb-3 p-0'>
+    <div class="inner row d-flex justify-content-center">
+        <div class="card col-md-5 col-12 box1">
+            <div class="card-content">
+                <div class="card-header">
+                    <div class="heading mb-3"> PAYMENT METHOD </div>
+                    <div class="sub-heading row text-center m-0" >
+                        <div class="col-6 col-md-6 sub-heading1">By Debit Card</div>
+                        <button type="button" (click)=" placeOrderByCashOnDelivery()"
+                            class="col-6 col-md-6 sub-heading2"><strong style="color:green">(₹ {{amount}}) Cash on Delivery</strong></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p><small> You choose the method of payment with a credit card. Enter your payment details or select
+                            another payment method </small></p>
+                    <div class="credit d-block mt-5 mx-auto"> <img class="frnt" src="https://i.imgur.com/Lj98lDm.png"
+                            width="200px"> <img class="back" src="https://i.imgur.com/HrUwtFC.png" width="200px"> </div>
+                </div>
+            </div>
+        </div>
+        <div class="card col-md-5 col-12 box2">
+            <div class="card-content">
+                <div class="card-header box2-head">
+                    <div class="heading2"> PAYMENT DETAILS </div>
+                </div>
+                <div class="card-body col-10 offset-1">
+                    <form #form="ngForm" [formGroup]="paymentForm">
+                        <div class="form-group">
+                            <label><small><strong class="text-muted" for="ownerName">CARD
+                                        HOLDER</strong></small></label>
+                            <input class="form-control" placeholder="Devin Caldwell" id="ownerName"
+                                formControlName="ownerName" required>
+                            <div class="form-text text-danger"
+                                *ngIf="ownerName.errors?.['required'] && ownerName.touched ">
+                                Your card name is required.
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label><small><strong class="text-muted">CARD NUMBER</strong></small></label>
+                            <div class="d-flex card-number">
+                                <input class="form-control" placeholder="1234-4567-4543-1685"
+                                    formControlName="cardNumber" required > <i
+                                    class="fas fa-credit-card text-muted fa-2x"></i>
+                            </div>
+                            <!-- <div class="form-text text-danger"
+                                *ngIf="cardNumber.errors?.['pattern'] && cardNumber.touched">
+                                Card number should be of 16 digits.
+                            </div> -->
+                            <div class="form-text text-danger"
+                                *ngIf="cardNumber.errors?.['minLength'] ||  cardNumber.errors?.['maxLength'] && (cardNumber.dirty || cardNumber.touched)">
+                                Card number is required and should contain 16 digits.
+                            </div>
+                            <div class="form-text text-danger"
+                                *ngIf="cardNumber.errors?.['required'] && cardNumber.touched ">
+                                 Card number is required and should be 16 digits long.
+                            </div>
+
+                        </div>
+                        <div class="line3">
+                            <div class="txt d-flex">
+                                <p><small class="text-muted">EXPERATION DATE</small></p>
+
+                            </div>
+                            <div class="form-group row">
+                                <select class="form-control col-5" id="expiryDate">
+                                    <option>January</option>
+                                    <option>February</option>
+                                    <option>march</option>
+                                    <option>April</option>
+                                    <option>May</option>
+                                    <option>June</option>
+                                    <option>July</option>
+                                    <option>August</option>
+                                    <option>September</option>
+                                    <option>October</option>
+                                    <option>November</option>
+                                    <option>December</option>
+
+                                </select>
+                                <select class="form-control col-4">
+                                    <option>2020</option>
+                                    <option>2021</option>
+                                    <option>2022</option>
+                                    <option>2023</option>
+                                    <option>2024</option>
+                                    <option>2025</option>
+
+
+                                </select>
+
+
+                                <br>
+                                <div class="txt d-flex">
+
+                                    <p><small class="text-muted">CVV</small></p>
+                                </div>
+                                <input class="col-3 col-md-2 offset-md-0 text-left" type="text" placeholder="234"
+                                    formControlName="cvv" required pattern="^[0-9]{3, 4}$">
+                            </div>
+                            <div class="form-text text-danger"
+                            *ngIf=" cvv.errors?.['required'] && cvv.touched ">
+                            cvv is required and should be 3 or 4 digits long.
+
+                        </div>
+                            <div class="form-text text-danger"
+                                *ngIf="cvv.errors?.['minLength'] ||  cvv.errors?.['maxLength'] && (cvv.dirty || cvv.touched)">
+                                Cvv is invalid .Cvv should contain 3 digits only.
+                            </div>
+                            <!-- <div class="form-text text-danger" *ngIf="cvv.errors?.['required'] &&  cvv.touched ">
+                                CVV is required.
+                            </div> -->
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer col-10 offset-1 border-0 footer2">
+                    <div class="d-flex total mb-5">
+                        <p><strong>Payment of</strong></p>
+                        <p style="color:black">₹ {{amount}}</p>
+                    </div>
+                     <button (click)="placeOrderByCard()" class="btn col-12" > PAY </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="bg-dark text-center text-white">
+
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white">Online Shopping </a>
+    </div>
+    <!-- Copyright -->
+</footer>

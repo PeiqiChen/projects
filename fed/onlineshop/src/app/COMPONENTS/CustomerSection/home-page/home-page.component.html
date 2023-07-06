@@ -1,0 +1,184 @@
+<nav class="navbar navbar-dark bg-dark" style="height: 74px;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img
+        src="https://play-lh.googleusercontent.com/tAgbpyJW4Yy3egbm_Kjh1EVfqUSkba1s5g5bitqsUvCqc1acmY08CbuTwSOGOOoLp68=s200"
+        class="me-2"
+        height="45"
+        alt="Logo"
+        loading="lazy"
+      />
+      <small><i><strong>Online Shop</strong></i></small>
+    </a>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+    <ul class="nav nav-pills mb-10" id="pills-tab" role="tablist">
+
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" [routerLink]="['']" id="pills-back-tab" data-bs-toggle="pill"
+          data-bs-target="#pills-back" type="button" role="tab" aria-controls="pills-back" aria-selected="false"><i
+            class="fas fa-arrow-circle-left"></i></button>
+      </li>
+<!--      <li class="nav-item" role="presentation">-->
+<!--        <button class="nav-link active" [routerLink]="['/login']" id="pills-login-tab" data-bs-toggle="pill"-->
+<!--          data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login" aria-selected="true"><i-->
+<!--            class="fas fa-user-circle"></i></button>-->
+<!--      </li>-->
+<!--      <li class="nav-item" role="presentation">-->
+<!--        <button class="nav-link" [routerLink]="['/register']" id="pills-register-tab" data-bs-toggle="pill"-->
+<!--          data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register"-->
+<!--          aria-selected="false"><i class="fas fa-users"></i></button>-->
+<!--      </li>-->
+
+
+
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" [routerLink]="['/product-display']" id="pills-product-display-tab"
+          data-bs-toggle="pill" data-bs-target="#pills-product-display" type="button" role="tab"
+          aria-controls="pills-product-display" aria-selected="false">View Products</button>
+      </li>
+
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" [routerLink]="['/order-display']" id="pills-order-display-tab"
+                data-bs-toggle="pill" data-bs-target="#pills-product-display" type="button" role="tab"
+                aria-controls="pills-product-display" aria-selected="false">View Orders</button>
+      </li>
+
+      <li class="nav-item" role="presentation" style="align-items:left">
+        <button class="nav-link" [routerLink]="['/cart']" id="pills-back-tab" data-bs-toggle="pill"
+          data-bs-target="#pills-back" type="button" role="tab" aria-controls="pills-back" aria-selected="false"
+          style="-color:crimson; size: 2px; "><i class="fas fa-cart-plus"></i>
+          <div class="badge bg-danger">
+            {{totalItem}}
+          </div>
+        </button>
+      </li>
+      <li>
+        <p></p>
+      </li>
+      <li>
+        <p></p>
+      </li>
+
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" [routerLink]="['']" id="pills-register-tab" data-bs-toggle="pill"
+          data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register" aria-selected="false"
+          style="color:crimson" (click)="logout()"><i class="fas fa-sign-out-alt"></i>Logout</button>
+      </li>
+
+
+
+
+
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+    </div>
+
+  </div>
+
+
+
+
+</nav>
+<br>
+
+<!--<div class="input-group">-->
+<!--  <div class="form-outline">-->
+<!--    <input type="text" id="search" class="form-control" placeholder="Search category" [(ngModel)]="searchCategory" />-->
+<!--    <label class="form-label" for="form1"></label>-->
+<!--  </div>-->
+<!--  <button type="button" class="btn btn-primary" style="height:39px ">-->
+<!--    <i class="fas fa-search"></i>-->
+<!--  </button>-->
+<!--</div>-->
+
+<br>
+
+<!-- <section >
+  <div >
+  <div class="container py-3">
+
+    <div class="row justify-content-center">
+
+      <div class="col-md-12 col-lg-8 col-xl-8">
+
+        <div  fxFlex="20%" class="card text-black" *ngFor="let category of categoryList">
+
+          <img src="{{category.categoryImage}}"
+            class="card-img-top" alt="categoryImage" />
+          <div class="card-body">
+            <div class="text-center">
+              <h4 class="card-title">{{category.categoryName}}</h4>
+
+            </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="25%" *ngFor="let category of categoryList | search: searchCategory">
+      <mat-card class="mat-elevation-4">
+
+        <img mat-card-image src="{{category.categoryImage}}">
+
+        <mat-card-content>
+          <a routerLink="/products-by-category/{{category.id}}" class="list-group-item">
+            <strong> {{category.categoryName}}</strong>
+          </a>
+          <br>
+          <p>Explore now !</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <!-- <button mat-button style="color:blue">Go to Products</button> -->
+          <!-- <button mat-button>SHARE</button> -->
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+
+<footer class="bg-dark text-center text-white">
+
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright:
+    <a class="text-white">Online Shopping </a>
+  </div>
+  <!-- Copyright -->
+</footer>

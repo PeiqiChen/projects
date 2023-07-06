@@ -1,0 +1,163 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img
+        src="https://play-lh.googleusercontent.com/tAgbpyJW4Yy3egbm_Kjh1EVfqUSkba1s5g5bitqsUvCqc1acmY08CbuTwSOGOOoLp68=s200"
+        class="me-2" height="45" alt="Logo" loading="lazy" />
+      <small><i><strong>Online Shop</strong></i></small>
+    </a>
+
+
+    <ul class="nav nav-pills mb-10" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" [routerLink]="['/category']" id="pills-login-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login" aria-selected="true">Main</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" [routerLink]="['/product-display-admin']" id="pills-register-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register"
+                aria-selected="false">Products Management</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" [routerLink]="['/order-display-admin']" id="pills-home-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="false">
+          Order Management</button>
+      </li>
+      <ul></ul>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" [routerLink]="['']" id="pills-register-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register" aria-selected="false"
+                style="color:crimson" (click)="logout()">Logout</button>
+      </li>
+
+
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+    </div>
+
+  </div>
+
+
+
+</nav>
+<br>
+
+
+<br>
+
+<div class="content">
+<!--    <div fxLayout="row wrap" fxLayoutGap="15px grid">-->
+<!--        <div fxFlex="15%" *ngFor="let order of orderList | search: searchProducts">-->
+<!--            <mat-card class="mat-elevation-4">-->
+<!--                <a routerLink="/order-details-direct/{{order.id}}">-->
+<!--&lt;!&ndash;                <img mat-card-image src="{{product.productImage}}">&ndash;&gt;-->
+<!--                </a>-->
+<!--                <mat-card-content>-->
+<!--                    <a routerLink='/order-details-direct/{{order.id}}' class="list-group-item">-->
+<!--                        <strong style="color:rgb(9, 9, 9); font-size:medium">{{order.orderStatus}}</strong>-->
+<!--                    </a>-->
+<!--                    <br>-->
+<!--                    <p><strong>Date: </strong> {{order.datePlaced}}</p>-->
+
+<!--                    <a routerLink="/order-details-direct/{{order.id}}" style="color:rgb(253, 251, 251)">-->
+<!--                        <p style="color:rgb(142, 140, 140)">.... See more</p>-->
+<!--                    </a>-->
+
+
+<!--                    &lt;!&ndash; <p><strong>Description: </strong>{{product.productDescription}}</p>  &ndash;&gt;-->
+<!--                </mat-card-content>-->
+
+<!--                 &lt;!&ndash; <mat-card-actions> &ndash;&gt;-->
+<!--&lt;!&ndash;                    <a  routerLink="/buy-now/{{order.id}}">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <button mat-button  style="background-color:rgb(39, 112, 239);color:rgb(255, 254, 254)  "><i class="fas fa-credit-card"></i> Buy Now</button>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </a>&ndash;&gt;-->
+
+<!--                &lt;!&ndash; </mat-card-actions>  &ndash;&gt;-->
+<!--&lt;!&ndash;                <mat-card-actions *ngIf="!order.isSelected">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <button mat-button  (click)=addToCart(order) style="background-color:rgb(37, 164, 21)  "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                      </svg> Add to cart</button>&ndash;&gt;-->
+<!--&lt;!&ndash;                </mat-card-actions>&ndash;&gt;-->
+
+
+<!--            </mat-card>-->
+<!--        </div>-->
+<!--    </div>-->
+  <div class="card-table">
+    <div class="card-product">
+
+      <table class="table table-responsive">
+        <thead>
+        <tr>
+          <!-- <th>Serial no.</th>
+      <th>Product Id</th> -->
+          <!-- <th>Product Image</th>
+      <th>Product Name</th> -->
+
+          <!-- <th>Description</th>
+      <th>Price</th> -->
+          <!-- <th>Quantity</th> -->
+          <!-- <th>Total</th> -->
+
+        </tr>
+        </thead>
+        <br>
+        <tbody>
+
+        <tr *ngFor="let order of orderList;let i=index" class="card2">
+
+          <td>{{order.orderStatus}}</td>
+
+          <td style="width:15%"><i style="color:gray">Placed Date: </i>
+            {{order.datePlaced}}</td>
+<!--          <td style="color:black"><i style="color:gray">Price:</i><strong> ₹ {{order.wholesalePrice}}-->
+<!--          </strong></td>-->
+          <td></td>
+<!--          <td><strong style="color:green">Free Delivery</strong></td>-->
+          <td>
+            <button (click)="modifyOrderStatus(order.id, 'cancel')"
+                    class="btn btn-danger"><i
+              class="fas fas-trash"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                         height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+              <path
+                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+              <path fill-rule="evenodd"
+                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+            </svg></i> Cancel</button>
+          </td>
+
+          <td><button (click)="modifyOrderStatus(order.id, 'completed')" class="btn btn-success"><i
+            class="fas fa-shopping-bag"></i> Completed</button>
+          </td>
+          <td><button (click)="modifyOrderStatus(order.id, 'processing')" class="btn btn-primary">Processing</button> </td>
+
+          <a routerLink="/order-details-direct/{{order.id}}"><button class="btn btn-primary">Detail</button></a>
+        </tr>
+        <tr>
+          <br>
+        </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+
+
+</div>
+
+<footer class="bg-dark text-center text-white">
+
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white">Online Shopping </a>
+    </div>
+    <!-- Copyright -->
+</footer>

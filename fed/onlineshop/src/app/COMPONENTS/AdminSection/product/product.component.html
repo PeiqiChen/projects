@@ -1,0 +1,252 @@
+
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img
+        src="https://play-lh.googleusercontent.com/tAgbpyJW4Yy3egbm_Kjh1EVfqUSkba1s5g5bitqsUvCqc1acmY08CbuTwSOGOOoLp68=s200"
+        class="me-2" height="45" alt="Logo" loading="lazy" />
+      <small><i><strong>Online Shop</strong></i></small>
+    </a>
+
+
+    <ul class="nav nav-pills mb-10" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" [routerLink]="['/category']" id="pills-login-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login" aria-selected="true">Main</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" [routerLink]="['/product-display-admin']" id="pills-register-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register"
+                aria-selected="false">Products Management</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" [routerLink]="['/order-display-admin']" id="pills-home-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="false">
+          Order Management</button>
+      </li>
+      <ul></ul>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" [routerLink]="['']" id="pills-register-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register" aria-selected="false"
+                style="color:crimson" (click)="logout()">Logout</button>
+      </li>
+
+
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+    </div>
+
+  </div>
+
+
+
+</nav>
+
+                  <div class="bg-text">
+                    <h2><strong>PRODUCT SECTION</strong></h2>
+
+                    <!-- <p>Description: Products and Category requirements are done here.</p>  -->
+                  </div>
+
+<div class="container">
+
+
+
+  <!-- <p style="text-align:center " >Go to the Category section from here </p>
+
+  <div class="d-flex justify-content-center mx-1 mb-1 mb-lg-1">
+    <button type="submit" class="btn btn-success btn-sm" [routerLink]="['/category']" >Category</button>
+     </div> -->
+
+<div class="product-container">
+
+  <div class="product-form">
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+
+      <!-- <div class="form-group">
+        <label for="categoryId">Id</label>
+        <input type="text" name="categoryId" [(ngModel)]="category.id">
+        </div> -->
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" #name="ngModel" [(ngModel)]="product.name" required>
+        <div class="form-text text-danger"
+             *ngIf="name.errors?.['required'] && (name.dirty || name.touched)">
+        Product Name  is required.
+      </div>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" name="description" [(ngModel)]="product.description">
+      </div>
+      <div class="form-group">
+        <label for="wholesalePrice">wholesalePrice</label>
+        <input type="text" name="wholesalePrice"  #price="ngModel" [(ngModel)]="product.wholesalePrice" required>
+        <div class="form-text text-danger"
+        *ngIf="price.errors?.['required'] && (price.dirty || price.touched)">
+        Product Price is required.
+      </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="retailPrice">retailPrice</label>
+        <input type="text" name="retailPrice" [(ngModel)]="product.retailPrice">
+      </div>
+
+      <div class="form-group">
+          <label for="quantity">quantity</label>
+        <input type="text" name="quantity" [(ngModel)]="product.quantity">
+      </div>
+<!--      <div class="form-group">-->
+<!--        <label for="categoryId">Category</label>-->
+<!--        &lt;!&ndash; <input type="text" name="categoryId" [(ngModel)]="product.categoryId"> &ndash;&gt;-->
+<!--      <select name="categoryId" (change)="changeCategory($event)" class="form-control" #categoryId="ngModel" [(ngModel)]="product.categoryId">-->
+<!--        <option>&#45;&#45;Select Category&#45;&#45;</option>-->
+<!--        <option [ngValue]="cat.id" *ngFor="let cat of catList">-->
+<!--           {{cat.categoryName}}-->
+<!--        </option>-->
+
+<!--        </select>-->
+<!--      <div class="form-text text-danger"-->
+<!--        *ngIf="categoryId.errors?.['required'] && (categoryId.dirty || categoryId.touched)">-->
+<!--        Product Price is required.-->
+<!--      </div>-->
+
+<!--      </div>-->
+
+    <br>
+      <div class="form-group">
+
+        <button>Save</button>
+
+        </div>
+
+    </form>
+  </div>
+<br>
+  <div class="product-grid">
+<div class="grid">
+<span><strong style="background-color:rgb(167, 165, 165)">NAME</strong></span>
+<span><strong>_________________</strong></span>
+<span> <strong style="background-color:rgb(171, 169, 169)">DESCRIPTION</strong></span>
+<span>_______</span>
+<span> <strong style="background-color:rgb(179, 176, 176)">WholeSale PRICE</strong></span>
+<span><strong>_____</strong></span>
+<!-- <span>Image</span>
+<span>______</span> -->
+<span><strong style="background-color:rgb(175, 173, 173)">Retail Price</strong></span>
+  <span>______</span>
+  <span><strong style="background-color:rgb(175, 173, 173)">Quantity</strong></span>
+
+</div>
+    <div  class="product-row" *ngFor= "let product of products">
+      <div class="product-row-details" (click)="populateForm(product)">
+        <!-- <span>{{category.id}}</span>  -->
+
+        <span>{{ product.name }}</span>
+        <span>{{ product.description }}</span>
+        <span>$ {{ product.wholesalePrice }}</span>
+        <!-- <span>{{ product.productImage }}</span> -->
+        <span >${{ product.retailPrice}}</span>
+        <span >{{ product.quantity}}</span>
+        <!-- <span (select)="changeCategory($event)" >{{ product.categoryName}}</span> -->
+      </div>
+
+      <!-- <div class="category-row" >
+         <div class="category-row-details"> -->
+           <!-- <span>19</span>
+           <span>Jewellery</span>
+        </div> -->
+
+      <div class="product-row-action">
+        <a (click)="deleteProduct(product.id)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+          <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+        </svg></a>
+      </div>
+     </div>
+
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+                  <!-- <table class="table table-striped">
+      <thead >
+          <tr>
+              <td>Id</td>
+
+              <td>Category Name</td>
+              <div class="btn-group">
+              <div class="d-flex justify-content-center mx-1 mb-1 mb-lg-1">
+                  <button type="submit" class="btn btn-primary btn-sm"  >Add More</button>
+                </div>
+                <div class="d-flex justify-content-center mx-1 mb-1 mb-lg-1">
+                  <button type="submit" class="btn btn-success btn-sm" [routerLink]="['/product']" >Product</button>
+                </div>
+                </div>
+
+          </tr>
+      </thead>
+
+      <tbody style="color:black">
+          <tr *ngFor="let category of categoryList" >
+              <h1>{{category.Id}}</h1>
+
+              <h1>{{category.CategoryName}}</h1>
+
+          </tr>
+           <div class="btn-group">
+              <div class="d-flex justify-content-center mx-1 mb-1 mb-lg-1">
+                  <button type="submit" class="btn btn-primary btn-sm"  >Update</button>
+                </div>
+
+                  <div class="d-flex justify-content-center mx-1 mb-1 mb-lg-1">
+                      <button type="submit" class="btn btn-danger btn-sm"  >Delete</button>
+                    </div>
+                    </div> -->
+      <!-- </tbody>
+  </table> -->
+
+
+
+                   <!-- <div class="d-flex justify-content-center ">
+                    <button type="submit" class="btn btn-danger btn-sm" [routerLink]="['']" >Log out</button>
+                  </div> -->
+
+
+
+   <!-- </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </section> -->
+  <footer class="bg-dark text-center text-white" >
+  <div class="text-center p-3" style="background-color: rgba(17, 16, 16, 0.266);">
+    © 2023 Copyright:
+    <a class="text-white" >Online Shopping </a>
+  </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,173 @@
+<nav class="navbar navbar-dark bg-dark" style="height: 74px;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="https://play-lh.googleusercontent.com/tAgbpyJW4Yy3egbm_Kjh1EVfqUSkba1s5g5bitqsUvCqc1acmY08CbuTwSOGOOoLp68=s200"
+                class="me-2" height="45" alt="Logo" loading="lazy" />
+            <small><i><strong>Online Shop</strong></i></small>
+        </a>
+        <ul></ul>
+        <ul></ul>
+        <ul></ul>
+        <ul></ul>
+        <ul></ul>
+        <ul></ul>
+
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" (click)="goBack()" id="pills-back-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-back" type="button" role="tab" aria-controls="pills-back"
+                    aria-selected="false"><i class="fas fa-arrow-circle-left"></i></button>
+            </li>
+
+
+            <li class="nav-item" role="presentation" style="align-items:left">
+                <button class="nav-link" [routerLink]="['/cart']" id="pills-back-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-back" type="button" role="tab" aria-controls="pills-back"
+                    aria-selected="false" style="-color:crimson; size: 2px; "><i class="fas fa-cart-plus"></i>
+                    <div class="badge bg-danger">
+                        {{totalItem}}
+                    </div>
+                </button>
+            </li>
+            <!-- <li class="nav-item" role="presentation">
+          <button class="nav-link" [routerLink]="['/']" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="false">Admin</button>
+        </li> -->
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" [routerLink]="['']" id="pills-register-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register"
+                    aria-selected="false" style="color:crimson" (click)="logout()"><i
+                        class="fas fa-sign-out-alt"></i>Logout</button>
+            </li>
+            <!-- <li class="nav-item" role="presentation">
+            <button class="nav-link" (click)="deleteAccount(id)" id="pills-register-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register"
+                aria-selected="false">Delete</button>
+        </li> -->
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+        </div>
+
+    </div>
+
+
+
+
+</nav>
+
+
+
+<!-- <div style=" color:aliceblue; align-content: center;">
+
+
+        <img src="{{product.productImage}}" alt="">
+
+
+    <div class="info">
+        <div class="card-body">
+            <p><strong>Id: {{product.id}}</strong></p>
+              <h4 class="card-title">Product Name : {{product.name}}</h4>
+              <br>
+              <h4>Price : ₹ {{product.price}}</h4>
+              <br>
+              <h4 class="card-text"><strong>Description: {{product.productDescription}} </strong></h4>
+
+            </div>
+
+    </div>
+
+ </div> -->
+
+<div class="card">
+    <table>
+        <tbody>
+            <tr>
+                <td><img src="{{product.productImage}}" alt=""></td>
+                <td></td>
+                <td>
+                    <div class="card-body">
+
+                        <h3 class="card-title"> {{product.name}}</h3>
+                        <br>
+                        <!-- <p><strong style="color:gray">Id: {{product.id}}</strong></p> -->
+                        <h5><i style="color:gray">Price :</i><b style="color:red"> ₹ {{product.wholesalePrice}}</b></h5>
+                        <p style="color:gray"><i>(Inclusive of all taxes)</i></p>
+                        <br>
+                        <h5 class="card-text"><i style="color:gray">Description:</i> {{product.description}}
+                        </h5>
+                        <br>
+                        <br>
+                        <ul>
+                            <li><i class="fas fa-truck-moving"></i> <i style="color:green"><b> FREE DELIVERY </b>| </i>
+                                <p>Delivery within 4 days</p>
+                            </li>
+                            <li>Cash on Delivery <i style="color:gray"> Available</i></li>
+                            <li> <i class="fas fa-credit-card"></i> Pay via Card <i style="color:gray"> Available</i>
+                            </li>
+
+                        </ul>
+                        <br>
+
+                        <div class="group">
+                            <br>..
+
+
+
+                          <a style="color:aliceblue" routerLink="/buy-now/{{product.id}}">
+                                <button type="button " class="btn btn-success btn-lg"
+                                    style="background-color:rgb(32, 95, 242);color:rgb(255, 254, 254);size:20px  " (click)=addToWatchList(product)><i
+                                        class="fas fa-credit-card"></i> Add to Watchlist</button>
+                            </a>
+
+                            <!-- <button type="button "  class="btn btn-danger btn-lg">Checkout </button> -->
+                            <button type="button " style="margin-left:10px"  (click)=addToCart(product) class="btn btn-success btn-lg"><i
+                                    class="fas fa-shopping-cart"></i> Add to cart </button>
+
+                        </div>
+
+                    </div>
+
+                </td>
+
+                <td> </td>
+            </tr>
+            <tr>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+<footer class="bg-dark text-center text-white">
+
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white">Online Shopping </a>
+    </div>
+    <!-- Copyright -->
+</footer>

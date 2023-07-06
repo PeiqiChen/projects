@@ -1,0 +1,264 @@
+<nav class="navbar navbar-dark bg-dark" style="height: 74px;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img
+              src="https://play-lh.googleusercontent.com/tAgbpyJW4Yy3egbm_Kjh1EVfqUSkba1s5g5bitqsUvCqc1acmY08CbuTwSOGOOoLp68=s200"
+              class="me-2"
+              height="45"
+              alt="Logo"
+              loading="lazy"
+            />
+            <small><i><strong>Online Shop</strong></i></small>
+          </a>
+          <ul></ul>
+<ul></ul>
+<ul></ul>
+<ul></ul>
+<ul></ul>
+<ul></ul>
+
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" [routerLink]="['/home-page']" id="pills-back-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-back" type="button" role="tab" aria-controls="pills-back"
+                    aria-selected="false"><i class="fas fa-arrow-circle-left"></i></button>
+          </li>
+
+
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" [routerLink]="['/product-display']" id="pills-product-display-tab"
+                    data-bs-toggle="pill" data-bs-target="#pills-product-display" type="button" role="tab"
+                    aria-controls="pills-product-display" aria-selected="false">View Products</button>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" [routerLink]="['/order-display']" id="pills-order-display-tab"
+                    data-bs-toggle="pill" data-bs-target="#pills-product-display" type="button" role="tab"
+                    aria-controls="pills-product-display" aria-selected="false">View Orders</button>
+          </li>
+
+
+          <!-- <li class="nav-item" role="presentation">
+        <button class="nav-link" [routerLink]="['/view-product-info']" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="false">view</button>
+      </li> -->
+          <li class="nav-item" role="presentation" style="align-items:left">
+            <ul></ul>
+<ul></ul>
+<ul></ul>
+<ul></ul>
+<ul></ul>
+<ul></ul>
+<ul></ul>
+<ul></ul>
+<ul></ul>
+<ul></ul>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" [routerLink]="['']" id="pills-register-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register"
+                    aria-selected="false" style="color:crimson" (click)="logout()"><i
+                        class="fas fa-sign-out-alt"></i>Logout</button>
+            </li>
+            <!-- <li class="nav-item" role="presentation">
+          <button class="nav-link" [routerLink]="['/']" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="false">Admin</button>
+        </li> -->
+
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+        </div>
+
+    </div>
+
+
+
+
+</nav>
+
+
+
+
+
+
+<div class="bg-text">
+    <ng-container *ngIf="products.length != 0">
+        <div class="container">
+            <div class="card-table">
+                <div class="card-product">
+
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <!-- <th>Serial no.</th>
+                            <th>Product Id</th> -->
+                                <!-- <th>Product Image</th>
+                            <th>Product Name</th> -->
+
+                                <!-- <th>Description</th>
+                            <th>Price</th> -->
+                                <!-- <th>Quantity</th> -->
+                                <!-- <th>Total</th> -->
+
+                            </tr>
+                        </thead>
+                        <br>
+                        <tbody>
+
+                            <tr *ngFor="let product of products;let i=index" class="card2">
+                                <!-- <td>{{i+1}}</td>
+                            <td>{{product.id}}</td> -->
+<!--                                <td><img style="width:120px;" src="{{product.productImage}}" alt=""></td>-->
+                                <td>{{product.name}}</td>
+
+                                <td style="width:15%"><i style="color:gray">Description: </i>
+                                    {{product.description}}</td>
+                                <!-- <td style="width:14%">₹ {{product.price}}</td> -->
+                                <!-- <td>{{product.quantity}}</td> -->
+                                <td style="color:black"><i style="color:gray">Price:</i><strong> ₹ {{product.wholesalePrice}}
+                                    </strong></td>
+                                <td></td>
+                                <td>Delivery within 4 days | <strong style="color:green">Free Delivery</strong></td>
+                                <td>
+                                    <button (click)="removeItem(product)" class="btn btn-danger"><i
+                                            class="fas fas-trash"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                                <path fill-rule="evenodd"
+                                                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                            </svg></i> Remove</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <br>
+                            </tr>
+                            <tr>
+                                <!-- <td colspan="5"></td> -->
+
+                               <td><button (click)="emptycart()" class="btn btn-danger"><i class="fas fa-times"></i>
+                                       Empty Cart</button> </td>
+                               <td></td>
+                               <td></td>
+                               <td><button [routerLink]="['/product-display']" class="btn btn-success"><i
+                                           class="fas fa-shopping-bag"></i> Shop More</button>
+                               </td>
+                               <td></td><td></td>
+                               <td><button (click)=check() class="btn btn-primary">Proceed to Buy</button> </td>
+                               <td></td>
+
+                           </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <table class="card3">
+                    <thead>
+                        PRICE DETAILS
+                    </thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+                    <br>
+                    <tbody>
+
+                        <tr>
+                            <td>Price : ₹ {{grandTotal}} </td>
+
+                        </tr>
+                        <br>
+                        <tr></tr>
+                        <tr>
+                            <td>Discount : <i style="color:rgb(42, 240, 28)">₹ 0 </i> </td>
+                        </tr>
+                        <br>
+                        <tr></tr>
+                        <tr>
+                            <td>Delivery Charges :  <i style="color:rgb(56, 240, 56)">FREE Delivery</i></td>
+                        </tr>
+                        <br>
+                        <tr></tr>
+                        <tr>
+                            <td><strong > Total Amount :
+                            </strong><i style="background-color:rgb(200, 6, 6) ;">₹ {{grandTotal}}</i></td>
+                        </tr>
+
+                        <br>
+
+                    </tbody>
+                </table>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>
+
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+    </ng-container>
+
+
+
+
+
+</div>
+
+
+<!-- <div class="bg-text1">  -->
+<ng-container *ngIf="products.length==0">
+    <div class="container">
+        <div class="card">
+            <!-- <h5 class="card-title"><strong>MY CART</strong></h5> -->
+        </div>
+        <div class="center">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/005/006/007/small/no-item-in-the-shopping-cart-click-to-go-shopping-now-concept-illustration-flat-design-eps10-modern-graphic-element-for-landing-page-empty-state-ui-infographic-icon-vector.jpg "
+                alt="">
+            <h4> Your cart is empty</h4>
+            <h6>Add item to it now</h6>
+            <button [routerLink]="['/product-display']" class="btn btn-primary">Shop Now</button>
+        </div>
+    </div>
+</ng-container>
+<!-- </div>  -->
+
+
+
+
+
+
+
+
+
+
+<footer class="bg-dark text-center text-white">
+
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white">Online Shopping </a>
+    </div>
+    <!-- Copyright -->
+</footer>

@@ -1,0 +1,220 @@
+<div class="top">
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img
+          src="https://play-lh.googleusercontent.com/tAgbpyJW4Yy3egbm_Kjh1EVfqUSkba1s5g5bitqsUvCqc1acmY08CbuTwSOGOOoLp68=s200"
+          class="me-2" height="45" alt="Logo" loading="lazy" />
+        <strong><small><i>Online Shop</i></small></strong>
+      </a>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+
+
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" [routerLink]="['']" id="pills-home-tab" data-bs-toggle="pill"
+            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="false"><i
+              class="fas fa-arrow-circle-left"></i></button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" [routerLink]="['/login']" id="pills-login-tab" data-bs-toggle="pill"
+            data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login" aria-selected="true"><i
+              class="fas fa-user-circle"></i></button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" [routerLink]="['/register']" id="pills-register-tab" data-bs-toggle="pill"
+            data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register"
+            aria-selected="false"><i class="fas fa-users"></i></button>
+        </li>
+
+      </ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...
+        </div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <div class="bg-text">
+    <p class="text-center h6 fw-bold mb-5 mx-1 mx-md-4 mt-4">Enter your credentials to create an account</p>
+    <form class="mx-1 mx-md-1" #form="ngForm" (submit)="onSubmit(form)">
+      <input type="hidden" name="id" [value]="service.formData.id">
+      <input type="hidden" name="role" #role="ngModel" [(ngModel)]="service.formData.role">
+
+      <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill ">
+          <label class="form-label" for="name"><strong>Name</strong> </label>
+          <input type="text" id="name" placeholder="name" name="name" #name="ngModel"
+            [(ngModel)]="service.formData.name" class="form-control" pattern="[a-zA-Z ]*" />
+          <div class="form-text text-danger" *ngIf="name.errors?.['pattern'] && name.touched">
+            Name should not contain any number or any special character.
+          </div>
+
+        </div>
+      </div>
+
+      <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill ">
+          <label class="form-label" for="username"><strong>Username</strong></label>
+          <input type="text" class="form-control" id="username" placeholder="username" name="username"
+            #username="ngModel" [(ngModel)]="service.formData.username"/>
+          <div class="form-text text-danger"
+            *ngIf="username.errors?.['minLength'] ||  username.errors?.['maxLength'] && (username.dirty || username.touched)">
+            Username should be atleast 3 and at the max 15 characters long.
+          </div>
+
+          <div class="form-text text-danger"
+            *ngIf="(username.dirty || username.touched)">
+            Username is required.
+          </div>
+<!--          <div class="form-text text-danger" *ngIf="username.touched">-->
+<!--            Username should contain alphabets , numbers and underscore.-->
+<!--&lt;!&ndash;            Ex: x2z_dG1a&ndash;&gt;-->
+<!--          </div>-->
+
+
+        </div>
+      </div>
+
+<!--      <div class="d-flex flex-row align-items-center mb-4">-->
+<!--        <i class="fas fa-user fa-lg me-3 fa-fw"></i>-->
+<!--        <div class="form-outline flex-fill ">-->
+<!--          <label class="form-label" for="address"><strong>Address</strong></label>-->
+<!--          <input type="text" id="address" placeholder="address" name="address" #address="ngModel"-->
+<!--            [(ngModel)]="service.formData.address" class="form-control" />-->
+<!--          <div class="form-text text-danger"-->
+<!--            *ngIf="address.errors?.['minLength'] ||  address.errors?.['maxLength'] && (address.dirty || address.touched)">-->
+<!--            Address should be atleast 8 and at the max 50 characters long.-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="d-flex flex-row align-items-center mb-4">-->
+<!--        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>-->
+<!--        <div class="form-outline flex-fill ">-->
+<!--          <label class="form-label" for="email"><strong>Email</strong></label>-->
+<!--          <input type="email" id="email" placeholder="email address" name="email" #email="ngModel"-->
+<!--            [(ngModel)]="service.formData.email" class="form-control" required-->
+<!--            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />-->
+<!--          <div class="form-text text-danger" *ngIf="email.errors?.['required'] && (email.dirty || email.touched)">-->
+<!--            Email is required.-->
+<!--          </div>-->
+<!--          <div class="form-text text-danger"-->
+<!--            *ngIf="email.errors?.['minLength'] ||  email.errors?.['maxLength'] && (email.dirty || email.touched)">-->
+<!--            Email should be atleast 3 and at the max 50 characters long.-->
+<!--          </div>-->
+<!--          <div class="form-text text-danger" *ngIf="email.errors?.['pattern'] && email.touched">-->
+<!--            Email is invalid.-->
+<!--            Ex: user@example.com-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--      </div>-->
+      <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-phone fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill ">
+          <label class="form-label" for="text"><strong>Phone No.</strong></label>
+          <input type="text" id="text" placeholder="calling no." name="phoneNo" #phoneNo="ngModel"
+            [(ngModel)]="service.formData.phoneNo" class="form-control" required pattern="^((\\+91-?)|0)?[0-9]{10}$" />
+          <div class="form-text text-danger">
+            <div *ngIf="phoneNo.errors?.['pattern']">Please, Enter 10 digit Mobile Number.</div>
+          </div>
+
+          <div class="form-text text-danger" *ngIf="phoneNo.errors?.['required'] && (phoneNo.dirty || phoneNo.touched)">
+            Phone number is required.
+          </div>
+          <div class="form-text text-danger"
+            *ngIf="phoneNo.errors?.['minLength'] ||  phoneNo.errors?.['maxLength'] && (phoneNo.dirty || phoneNo.touched)">
+            Phone no should be in the correct format.
+          </div>
+          <!-- <div class="form-text text-danger"
+                            *ngIf="phoneNo.errors?.['pattern'] && phoneNo.touched">
+                            Phone number is invalid.
+
+                          </div> -->
+
+
+        </div>
+      </div>
+
+      <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill ">
+          <label class="form-label" for="password"><strong>Password</strong></label>
+          <input type="password" id="password" placeholder="password" name="password" #password="ngModel"
+            [(ngModel)]="service.formData.password" class="form-control"/>
+          <div class="form-text text-danger"
+            *ngIf="(password.dirty || password.touched) ">
+            Password is required.
+          </div>
+          <div class="form-text text-danger"
+            *ngIf="password.errors?.['minLength'] ||  password.errors?.['maxLength'] && (password.dirty || password.touched)">
+            Password should be atleast 3 and at the max 15 characters long.
+          </div>
+          <div class="form-text text-danger" *ngIf="password.touched">
+            Password should be strong.
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-2">
+                        <label class="form-label" for="confirmpass"><strong>Confirm password</strong></label>
+                        <input type="password" id="confirmpass"  placeholder="confirm password" name="ConfirmPass" #ConfirmPass="ngModel" [(ngModel)]="service.formData.ConfirmPass" class="form-control"
+                        required maxlength="10" minlength="3" />
+                        <div class="form-text text-danger"
+                            *ngIf="ConfirmPass.errors?.['required'] && (ConfirmPass.dirty || ConfirmPass.touched)">
+                            Password confirmation  is required.
+                          </div>
+                      </div>
+                    </div> -->
+
+
+      <div class="container">
+        <div class="d-flex justify-content-center mx-1 mb-1 mb-lg-1">
+          <button type="submit" class="btn btn-success btn-sm" [disabled]="form.invalid">Register</button>
+        </div>
+
+        <div class="d-flex justify-content-center ">
+          <!-- <button type="submit" class="btn btn-primary btn-sm" [routerLink]="['']" > Go Back</button> -->
+        </div>
+      </div>
+
+
+    </form>
+
+  </div>
+  <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+    <!--img src="https://miro.medium.com/max/1018/1*iAu65xDmvpVdBJgps6EDEw.png"
+                    class="img-fluid" alt="Sample image"-->
+
+  </div>
+
+  <footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-white">Online Shopping </a>
+    </div>
+    <!-- Copyright -->
+  </footer>

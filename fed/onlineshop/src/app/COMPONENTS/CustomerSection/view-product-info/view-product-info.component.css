@@ -1,0 +1,39 @@
+footer{
+    position:absolute;
+    bottom: -165px;
+    width:100%;
+    padding:1px;
+
+  }
+  content{
+    color:aliceblue;
+    align-content: center;
+  }
+  .button{
+    size: 50px;
+  }
+  .bg-text{
+    background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+      color:white;
+      font-weight: bold;
+      border: 2px solid #f1f1f1;
+  }
+  /* .card-body{
+    height:500px;
+    margin:20px;
+    background-color:  #141313;
+    color:rgb(244, 237, 237);
+    right: 200px;
+  } */
+  .card {
+    height: 95vh;
+    margin: 30px;
+    padding: 3px;
+    size: 10px;
+    margin-top: 50px;
+    width: 1500px;
+    left: -10px;
+
+
+  }

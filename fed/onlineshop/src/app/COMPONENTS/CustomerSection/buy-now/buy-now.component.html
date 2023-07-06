@@ -1,0 +1,268 @@
+<nav class="navbar navbar-dark bg-dark" style="height: 74px;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img
+          src="https://play-lh.googleusercontent.com/tAgbpyJW4Yy3egbm_Kjh1EVfqUSkba1s5g5bitqsUvCqc1acmY08CbuTwSOGOOoLp68=s200"
+          class="me-2"
+          height="45"
+          alt="Logo"
+          loading="lazy"
+        />
+        <small><i><strong>Online Shop</strong></i></small>
+      </a>
+      <ul></ul>
+              <ul></ul>
+              <ul></ul>
+              <ul></ul>
+              <ul></ul>
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" [routerLink]="['/login']" id="pills-login-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login"
+                    aria-selected="true"><i class="fas fa-user-circle"></i></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" [routerLink]="['/register']" id="pills-register-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register"
+                    aria-selected="false"><i class="fas fa-users"></i></button>
+            </li>
+
+
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" [routerLink]="['/product-display']" id="pills-back-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-back" type="button" role="tab" aria-controls="pills-back"
+                    aria-selected="false">Products</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" [routerLink]="['/home-page']" id="pills-back-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-back" type="button" role="tab" aria-controls="pills-back"
+                    aria-selected="false">Categories</button>
+            </li>
+            <li class="nav-item" role="presentation" style="align-items:left">
+                <button class="nav-link" [routerLink]="['/cart']"id="pills-back-tab" data-bs-toggle="pill" data-bs-target="#pills-back" type="button" role="tab" aria-controls="pills-back"
+                aria-selected="false" style="-color:crimson; size: 2px; " ><i class="fas fa-cart-plus"></i>
+            <div class="badge bg-danger">
+              {{totalItem}}
+            </div></button>
+              </li>
+              <ul></ul>
+              <ul></ul>
+              <ul></ul>
+              <ul></ul>
+              <ul></ul>
+              <ul></ul>
+              <ul></ul>
+              <ul></ul>
+              <ul></ul>
+              <ul></ul>
+              <ul></ul>
+              <ul></ul>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" [routerLink]="['']" id="pills-register-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register"
+                    aria-selected="false" style="color:crimson" (click)="logout()"><i class="fas fa-sign-out-alt"></i>Logout</button>
+            </li>
+            <!-- <li class="nav-item" role="presentation">
+          <button class="nav-link" [routerLink]="['/']" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="false">Admin</button>
+        </li> -->
+
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+        </div>
+
+    </div>
+
+
+
+
+</nav>
+
+
+<div style="width: -100px;height: 30px;">
+  <h5 style="margin-left:350px" class="mb-0"><strong><i class="fas fa-check-circle" style="color:rgb(251, 254, 251)"> Cart</i><i style="color:aliceblue">------------------------------------</i></strong><strong><i class="fas fa-dot-circle"  style="color:rgb(246, 248, 251)"> Address</i><i style="color:aliceblue">---------------------------------</i></strong><strong><i class="far fa-circle" style="color:rgb(125, 122, 122)"> <strong>Payment</strong></i></strong></h5>
+</div>
+<div class="card2">
+<div class="row">
+    <div class="col-md-8 mb-4">
+
+      <div class="card mb-4">
+        <!-- <div class="card-header py-3">
+          <h6 class="mb-0"><strong><i class="fas fa-check-circle" style="color:green"> Cart</i>-----------------------------------</strong><strong><i class="far fa-dot-circle" style="color:rgb(9, 79, 171)"> Address</i>---------------------------------</strong><strong><i class="far fa-circle" style="color:red"> Payment</i></strong></h6>
+        </div> -->
+        <div class="card-body">
+          <form #form="ngForm" [formGroup]="checkoutForm" >
+
+            <p class="mb-0"><strong style="size: 30px;">Deliver to :</strong></p>
+            <br>
+              <div class="col">
+                <div class="form-outline mb-3">
+                  <label class="fullname" for="fullname"><strong>Full Name</strong></label>
+                  <input type="text" id="fullname" class="form-control" formControlName="fullname" placeholder="Name" required
+                  pattern="[a-zA-Z ]*"/>
+                  <div  class="form-text text-danger">
+                    <div *ngIf="fullname.errors?.['pattern']">Full name should contain only alplabets</div>
+                     </div>
+                  <div class="form-text text-danger"  *ngIf="fullname.errors?.['required'] && fullname.touched ">
+                    Fullname is required.
+                 </div>
+                </div>
+
+
+             <div class="form-outline mb-3">
+              <label class="form-label" for="phonenNo"><strong>Phone Number</strong></label>
+              <input type="number" id="phoneNo" class="form-control" formControlName="phoneNo" placeholder="Calling no." required
+              pattern="^((\\+91-?)|0)?[0-9]{10}$"/>
+               <div  class="form-text text-danger">
+                <div *ngIf="phoneNo.errors?.['pattern']">Please, Enter 10 digit Mobile Number.</div>
+                 </div>
+              <div class="form-text text-danger"  *ngIf="phoneNo.errors?.['required'] && phoneNo.touched ">
+                phonenNo is required.
+             </div>
+             <div class="form-text text-danger"
+                            *ngIf="phoneNo.errors?.['minLength'] ||  phoneNo.errors?.['maxLength'] && (phoneNo.dirty || phoneNo.touched)">
+                            Phone no should be in the correct format.
+                          </div>
+            </div>
+
+
+            <div class="form-outline mb-3">
+              <label class="form-label" for="address"><strong>Address</strong></label>
+              <input type="text" id="address" class="form-control" formControlName="address" placeholder="Delivery address" required />
+               <div class="form-text text-danger"  *ngIf="address.errors?.['required'] && address.touched ">
+                Address is required.
+             </div>
+            </div>
+            </div>
+
+            </form>
+            <div>
+                <!-- <button [routerLink]="['/payment']" class="edit" [disabled]="form.invalid" > Update</button> -->
+              </div>
+        </div>
+
+
+              <!-- <div class="col-md-6">
+                <table class="table">
+                  <thead class="thead-light">
+                    <tr>
+                      <th> Full Name</th>
+                      <th> Phone Number</th>
+                      <th> Address</th>
+                    </tr>
+                  </thead>
+                </table>
+                <tbody>
+                  <tr >
+                    <td> </td>
+                    <td>
+                      <i class="far fa-edit"></i>
+
+                    </td>
+                  </tr>
+                </tbody>
+
+              </div> -->
+
+
+
+    <br>
+
+
+    <table class="card3">
+      <thead>
+         <strong> ORDER DETAILS</strong>
+      </thead>
+      <tr>
+          <th></th>
+          <th></th>
+      </tr>
+
+      <br>
+      <tbody>
+
+          <tr>
+              <strong><td>Price : ₹ {{product.price}} </td></strong>
+
+          </tr>
+          <br>
+          <tr></tr>
+          <tr>
+              <td><strong>Discount : <i style="color:rgb(10, 98, 4)">₹ 0 </i></strong> </td>
+          </tr>
+          <br>
+          <tr></tr>
+          <tr>
+              <td><strong>Delivery Charges :  <i style="color:rgb(5, 96, 5)">FREE Delivery</i> </strong></td>
+          </tr>
+          <br>
+          <tr></tr>
+          <tr>
+              <td><strong > Total Amount :
+              <i style="color:rgb(200, 6, 6) ;">₹ {{product.price}}</i></strong></td>
+          </tr>
+
+          <br>
+
+      </tbody>
+  </table>
+  <br>
+
+
+    <!-- <div class="col-md-4 mb-14" style="color:aliceblue">
+      <div class="card mb-4">
+        <div class="card-header py-3">
+          <h5 class="mb-0"><strong style="color:red">Billing Total</strong></h5>
+        </div>
+        <div class="card-body">
+
+
+            <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+              <div>
+                <strong>Total amount: ₹ {{amount}}  </strong>
+              </div>
+              <span><strong></strong></span>
+            </li>
+            </div>
+            </div>
+            </div> -->
+
+
+
+           <div>
+           <a >
+          <button click="check()"  routerLink="/payment-direct/{{product.id}}" class="button-1" type="button"  [disabled]="form.invalid"><strong>Continue</strong></button>
+           </a>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="bg-dark text-center text-white">
+
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-white">Online Shopping </a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+

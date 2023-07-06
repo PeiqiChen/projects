@@ -1,0 +1,139 @@
+footer{
+    position:absolute;
+    bottom: -90px;
+    width:100%;
+    padding:1px;
+
+  }
+  content{
+    color:aliceblue;
+    
+  }
+  
+
+/* body {
+  font-family: 'Roboto', sans-serif!important;
+margin:0;
+padding:0;
+box-sizing: border-box;
+} */
+
+
+
+
+/* .rightside {
+  top: 100px;
+  background-color: #2d2b2b;
+width: 60rem; */
+/* border-bottom-right-radius: 1.5rem;
+  border-top-right-radius: 1.5rem; */
+  /* padding: 1rem 2rem 3rem 3rem;
+  margin-left: 270px;
+  color:aliceblue;
+}
+
+p{
+  text-align: center;
+}
+
+.button-1{
+  background: linear-gradient(
+      135deg
+      , #36870a 0%, #176913 100%);
+          padding: 8px;
+          border: none;
+         
+          color: white;
+          font-weight: 400;
+          font-size: 1rem;
+          
+          width:10%;
+          letter-spacing: .11rem;
+          outline:none;
+          left: 678px;
+          bottom:160px;
+          position: absolute;
+          
+
+}
+.button-1:hover
+{
+transform: scale(1.05) translateY(-3px);
+  box-shadow: 3px 3px 6px #38373785;
+}
+hr {
+  border: 2px solid rgb(4, 0, 0);
+}
+
+
+.button{
+  background: linear-gradient(
+135deg
+, #753733 0%, #f02f09 100%);
+  padding: 8px;
+  border: none;
+  
+  color: white;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-top: 10px;
+  width: 15%;
+  letter-spacing: .11rem;
+  outline:none;
+  left: 650px;
+  bottom: 65px;
+  position: absolute;
+}
+
+.button:hover
+{
+transform: scale(1.05) translateY(-3px);
+  box-shadow: 3px 3px 6px #38373785;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 1000px) {
+  .card{
+      flex-direction: column;
+      width: auto;
+    
+  }
+
+  
+
+  .rightside{
+      width:auto;
+      border-bottom-left-radius: 1.5rem;
+      padding:0.5rem 3rem 3rem 2rem;
+    border-radius:0;
+  }
+} */
+html{height: 100%}head, body{background-color: #BA68C8}
+.box1{background-color: #263238;color: white}
+.card-header{background: none}.box1{height: 600px}
+.box2{height: 600px}.heading{font-weight: 900}
+.heading2{padding-left: 40px}
+.box2-head{font-weight: 900;background: none;border: none}
+.card-header{margin-top: 30px;padding-left: 19px}
+.sub-heading{font-weight: 900;font-size: 14px}
+.sub-heading2{border: 1px solid white;color: #263238;padding-top: 10px;padding-bottom: 10px}
+.sub-heading1{background-color: white;color: #263238;padding-top: 10px;padding-bottom: 10px}
+.credit{position: absolute;left: 8vw}.frnt{z-index: 2;position: absolute}
+.back{position: absolute;z-index: 1;left: 70px;top: 30px}
+.form-group>input{border: none;border-bottom: 1px solid lightgray}
+.card-number>input{border: none}.card-number{border-bottom: 1px solid lightgray}
+.card-number>input::-webkit-input-placeholder{color: rgb(166, 165, 164);font-size: 15px}
+.card-number>input::-moz-placeholder{color:rgb(166, 165, 164);font-size: 15px}
+.card-number>input:-ms-input-placeholder{color:rgb(166, 165, 164);font-size: 15px}
+.card-number>input::placeholder{color:  rgb(166, 165, 164);font-size: 15px}input.focus, input:focus{outline: 0;box-shadow: none !important}
+.card-number.hover, .card-number:hover{outline: 0;box-shadow: none !important;border-bottom: 1px solid lightskyblue}select.focus, select:focus{outline: 0;box-shadow: none !important}
+.form-control{border: none;border-bottom: 1px solid lightgray}
+.txt{justify-content: space-between}.txt>p>small{font-weight: 900}
+.total{justify-content: space-between}
+.btn{height: 60px;background-color: #214bbe;color: white}.footer2{background: none}
+.btn.focus, .btn:focus{outline: 0;box-shadow: none !important}@media (min-width: 1025px) and (max-width: 1280px){.inner{margin-left: 150px}}
+

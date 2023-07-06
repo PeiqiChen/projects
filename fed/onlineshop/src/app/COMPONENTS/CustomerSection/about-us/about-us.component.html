@@ -1,0 +1,87 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img
+          src="https://play-lh.googleusercontent.com/tAgbpyJW4Yy3egbm_Kjh1EVfqUSkba1s5g5bitqsUvCqc1acmY08CbuTwSOGOOoLp68=s200"
+          class="me-2"
+          height="45"
+          alt="Logo"
+          loading="lazy"
+        />
+        <small><i><strong>Online Shop</strong></i></small>
+      </a>
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" [routerLink]="['']" id="pills-back-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-back" type="button" role="tab" aria-controls="pills-back"
+                aria-selected="false"><i class="fas fa-arrow-circle-left"></i></button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" [routerLink]="['/login']"      id="pills-login-tab" data-bs-toggle="pill" data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login" aria-selected="true"><i class="fas fa-user-circle"></i></button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" [routerLink]="['/register']" id="pills-register-tab" data-bs-toggle="pill" data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register" aria-selected="false"><i class="fas fa-users"></i></button>
+        </li>
+        <!-- <li class="nav-item" role="presentation">
+          <button class="nav-link" [routerLink]="['home-page']" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="false">View Home Page</button>
+        </li> -->
+        <!-- <li class="nav-item" role="presentation">
+          <button class="nav-link" [routerLink]="['/category']" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="false"><i class="fas fa-user-lock"></i></button>
+        </li> -->
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" [routerLink]="['/contact-us']" id="pills-register-tab" data-bs-toggle="pill"
+            data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register"
+            aria-selected="false"><i class="fas fa-phone-alt"></i></button>
+        </li>
+
+      </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+      </div>
+
+    </div>
+
+    <div class="bg-text">
+        <h3><img  height="100" src="https://www.apkmirror.com/wp-content/uploads/2022/05/40/62707eea16dc8.png"></h3>
+        <h4>What is online shopping?</h4>
+
+
+          <p> Online shopping  is a  platform that allows  consumers to purchase products online in India. As an own brand  seller , you can list on online shopping, and reach approximately 200-500 million budget-friendly customers. The platform has created a trusted network of distribution between us and the customers. As a result,  on Shopsy we can sell products to customers who are not very acquainted with e-shopping via shopsy who are the people our customers know and trust.</p>
+       <p></p>
+       <br>
+          <h4>How does it work?</h4>
+        <p><strong style="color:rgb(229, 45, 20 ); background-color: aliceblue;">Sign-up/Register-</strong>Firstly create an account by signing up to this site with all the required credentials</p>
+
+        <p><strong style="color:rgb(229, 45, 20 ); background-color: aliceblue;">Sign-in/Login-</strong>Sign in or Login by your username, password</p>
+
+        <p><strong style="color:rgb(229, 45, 20 ); background-color: aliceblue;">Shop-</strong>Enjoying shopping your desired products by adding it to the cart</p>
+
+        <p><strong style="color:rgb(229, 45, 20 ); background-color: aliceblue;">Checkout-</strong>Update your shipping details for your fastest delivery</p>
+
+        <p><strong style="color:rgb(229, 45, 20 ); background-color: aliceblue;">Payment-</strong>Pay via Cash on Delivery or By Debit Card</p>
+
+        <p><strong style="color:rgb(229, 45, 20 ); background-color: aliceblue;">Bill Receipt-</strong>Download your Receipt</p>
+
+        <br>
+        <div class="d-flex justify-content-center ">
+          <button type="submit" class="btn btn-danger btn-sm" [routerLink]="['/home-page']" >Shop Now</button>
+        </div>
+      </div>
+
+  </nav>
+
+
+  <footer class="bg-dark text-center text-white" >
+
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-white" >Online Shopping </a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+

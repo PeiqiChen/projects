@@ -1,0 +1,23 @@
+.bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color:white;
+    font-weight: bold;
+    border: 1px solid #f1f1f1;
+    position:absolute;
+    top: 5%;
+    left: 25%;
+    bottom: -8.5%;
+    transform: translate(10%, 5%);
+    z-index: 2;
+    width: 40%;
+    padding: 15px;
+    /* text-align: left; */
+  }
+  footer{
+    position:absolute;
+    bottom: -160px;
+    width:100%;
+    padding:1px;
+
+  }

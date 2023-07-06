@@ -1,0 +1,104 @@
+
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img
+        src="https://play-lh.googleusercontent.com/tAgbpyJW4Yy3egbm_Kjh1EVfqUSkba1s5g5bitqsUvCqc1acmY08CbuTwSOGOOoLp68=s200"
+        class="me-2" height="45" alt="Logo" loading="lazy" />
+      <small><i><strong>Online Shop</strong></i></small>
+    </a>
+
+
+    <ul class="nav nav-pills mb-10" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" [routerLink]="['/category']" id="pills-login-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login" aria-selected="true">Main</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" [routerLink]="['/product-display-admin']" id="pills-register-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register"
+                aria-selected="false">Products Management</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" [routerLink]="['/order-display-admin']" id="pills-home-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="false">
+          Order Management</button>
+      </li>
+      <ul></ul>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" [routerLink]="['']" id="pills-register-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register" aria-selected="false"
+                style="color:crimson" (click)="logout()">Logout</button>
+      </li>
+
+
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+    </div>
+
+  </div>
+
+
+
+</nav>
+<br>
+<br>
+
+
+<br>
+
+<div class="content">
+    <div fxLayout="row wrap" fxLayoutGap="15px grid">
+        <div fxFlex="15%" *ngFor="let product of productList | search: searchProducts">
+            <mat-card class="mat-elevation-4">
+                <a routerLink="/view-product-info/{{product.id}}">
+<!--                <img mat-card-image src="{{product.productImage}}">-->
+                </a>
+                <mat-card-content>
+                    <a routerLink='/view-product-info/{{product.id}}' class="list-group-item">
+                        <strong style="color:rgb(9, 9, 9); font-size:medium">{{product.name}}</strong>
+                    </a>
+                    <br>
+                    <p><strong>Price: </strong>₹ {{product.wholesalePrice}}</p>
+                    <a routerLink="/view-product-info/{{product.id}}" style="color:rgb(253, 251, 251)">
+                        <p style="color:rgb(142, 140, 140)">.... See more</p>
+                    </a>
+
+
+                    <!-- <p><strong>Description: </strong>{{product.productDescription}}</p>  -->
+                </mat-card-content>
+
+                 <!-- <mat-card-actions> -->
+                    <a  routerLink="/product">
+                    <button mat-button  style="background-color:rgb(39, 112, 239);color:rgb(255, 254, 254)  " >
+                      Edit </button>
+                    </a>
+
+
+            </mat-card>
+        </div>
+
+    </div>
+  <br>
+  <br>
+  <a  routerLink="/product">
+  <button class="btn btn-success"><i
+    class="fas fa-shopping-bag"></i> Add new product</button>
+  </a>
+
+
+</div>
+
+<footer class="bg-dark text-center text-white">
+
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white">Online Shopping </a>
+    </div>
+    <!-- Copyright -->
+</footer>

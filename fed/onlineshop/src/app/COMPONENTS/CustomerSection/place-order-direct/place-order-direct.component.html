@@ -1,0 +1,123 @@
+<nav class="navbar navbar-dark bg-dark" style="height: 74px;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img
+              src="https://play-lh.googleusercontent.com/tAgbpyJW4Yy3egbm_Kjh1EVfqUSkba1s5g5bitqsUvCqc1acmY08CbuTwSOGOOoLp68=s200"
+              class="me-2"
+              height="45"
+              alt="Logo"
+              loading="lazy"
+            />
+            <small><i><strong>Online Shop</strong></i></small>
+          </a>
+          <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+             <li class="nav-item" role="presentation">
+                <button class="nav-link" routerLink="/payment-direct/{{product.id}}" id="pills-back-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-back" type="button" role="tab" aria-controls="pills-back"
+                    aria-selected="false"><i class="fas fa-arrow-circle-left"></i></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" [routerLink]="['/login']" id="pills-login-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login"
+                    aria-selected="true"><i class="fas fa-user-circle"></i></button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" [routerLink]="['/register']" id="pills-register-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register"
+                    aria-selected="false"><i class="fas fa-users"></i></button>
+            </li>
+
+
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" [routerLink]="['/product-display']" id="pills-back-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-back" type="button" role="tab" aria-controls="pills-back"
+                    aria-selected="false">Products</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" [routerLink]="['/home-page']" id="pills-back-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-back" type="button" role="tab" aria-controls="pills-back"
+                    aria-selected="false">Categories</button>
+            </li>
+
+            <li class="nav-item" role="presentation" style="align-items:left">
+                <button class="nav-link" [routerLink]="['/cart']" id="pills-back-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-back" type="button" role="tab" aria-controls="pills-back"
+                    aria-selected="false" style="-color:crimson; size: 2px; " ><i class="fas fa-cart-plus"></i>
+                    <div class="badge bg-danger">
+                        {{totalItem}}
+                    </div>
+                </button>
+            </li>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <!-- <li class="nav-item" role="presentation">
+          <button class="nav-link" [routerLink]="['/']" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="false">Admin</button>
+        </li> -->
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" [routerLink]="['']" id="pills-register-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register"
+                aria-selected="false" style="color:crimson" (click)="logout()"><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+        </div>
+
+    </div>
+
+
+
+
+</nav>
+<!--<p><marquee style="color:rgb(116, 116, 117)">Hurry Up ! To avail the best products of your choice with reliable benefits only for you.-->
+<!--    Place Order of your choice making smooth transactions and getting items at your door step as soon as possible.</marquee></p>-->
+
+<div class="bg-text" style="color:aliceblue">
+    <div>
+    <img src="https://cdn-icons-png.flaticon.com/128/3500/3500833.png">
+    </div>
+    <h2><strong><i>YOUR ORDER HAS BEEN SUCCESSFULLY PLACED.</i></strong></h2>
+
+    <br>
+    <div class="btn-group">
+    <div class="d-flex justify-content-center ">
+      <button type="submit" class="btn btn-danger btn-sm" [routerLink]="['/home-page']" > <i class="fas fa-shopping-bag"></i> Shop More</button>
+    </div>
+    <div class="d-flex justify-content-center ">
+        <a routerLink="/order-details-direct/{{product.id}}">
+    <button type="submit" class="btn btn-success btn-sm"  >View current Order</button>
+    </a>
+    </div>
+    </div>
+  </div>
+
+
+<footer class="bg-dark text-center text-white">
+
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white">Online Shopping </a>
+    </div>
+    <!-- Copyright -->
+</footer>

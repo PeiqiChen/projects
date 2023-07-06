@@ -1,0 +1,162 @@
+<div class="top">
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="https://play-lh.googleusercontent.com/tAgbpyJW4Yy3egbm_Kjh1EVfqUSkba1s5g5bitqsUvCqc1acmY08CbuTwSOGOOoLp68=s200"
+        class="me-2" height="45"
+          alt="Logo" loading="lazy" />
+          <strong><small><i>Online Shop</i></small></strong>
+      </a>
+      <ul class="nav nav-pills mb-2" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" [routerLink]="['']" id="pills-back-tab" data-bs-toggle="pill"
+              data-bs-target="#pills-back" type="button" role="tab" aria-controls="pills-back"
+              aria-selected="false"><i class="fas fa-arrow-circle-left"></i></button>
+      </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" [routerLink]="['/login']" id="pills-login-tab" data-bs-toggle="pill"
+            data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login"
+            aria-selected="true"><i class="fas fa-user-circle"></i></button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" [routerLink]="['/register']" id="pills-register-tab" data-bs-toggle="pill"
+            data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register"
+            aria-selected="false"><i class="fas fa-users"></i></button>
+        </li>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+      <ul></ul>
+
+
+      </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...
+        </div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+      </div>
+
+    </div>
+
+
+  </nav>
+
+</div>
+
+<div class="bg-text">
+  <p style="text-align:center"><strong>Log in to your account.</strong></p>
+  <br>
+  <div class="top">
+
+    <!-- <section class="vh-90">
+  <div class="container py-3 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-lg-3 col-xl-7">
+        <div class="card text-black" style="border-radius: 0px;">
+          <div class="card-body p-md-3">
+            <div class="row justify-content-center">
+              <div class="col-md-25 col-lg-17 col-xl-15 order-3 order-lg-1"> -->
+    <div class="form-center">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <!--img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+                    class="img-fluid" alt="Phone image">
+                  </div-->
+        <div class="col-md-15 col-lg-15 col-xl-20 offset-xl-1">
+          <form #form="ngForm" [formGroup]="loginForm">
+            <!--div class="dropdown">
+                        <label for="lang">Login As</label>
+                        <br>
+                        <select name="Role" id="lang" [(ngModel)]="Role" style="width: 100%;
+              height: 30px;
+              border-radius: 6px;border: 1px solid #ced4da;min-height: calc(1.5em + 1rem + 2px);
+              padding: 0.5rem 1rem;
+              font-size: 1.25rem;font-weight: 400 !important">
+                          <option value=undefined selected>Select a Role</option>
+                          <option value="Customer">Customer</option>
+                          <option value="Admin">Admin</option>
+
+                        </select>
+                        </div-->
+            <!-- Username input -->
+            <!-- <input type="hidden" name="role" #role="ngModel" [(ngModel)]="loginService.Role" > -->
+            <div class="form-group">
+              <label for="role">Log in as</label>
+              <!-- <input type="text" name="categoryId" [(ngModel)]="product.categoryId"> -->
+              <select name="role" class="form-control" formControlName="role" required>
+                <option>--Select Role--</option>
+                <option>Admin</option>
+                <option>Customer</option>
+              </select>
+              <div class="form-text text-danger"  *ngIf="Role.errors?.['required'] && Role.touched ">
+                Role is required.
+              </div>
+              <br>
+            </div>
+            <!-- <input type="hidden" id="forRole" class="form-control form-control-lg"
+                            formControlName="role"  /> -->
+            <div class="form-outline mb-6">
+              <label class="form-label" for="username"><strong>Username</strong></label>
+              <input type="username" name="username"  id="username" placeholder="username"
+                class="form-control form-control-lg" formControlName="username" required />
+
+              <div class="form-text text-danger"  *ngIf="Username.errors?.['required'] && Username.touched ">
+                 Username is required.
+              </div>
+
+            </div>
+            <br>
+
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+              <label class="form-label" for="password"><strong>Password</strong></label>
+              <input type="password" name="password" id="password" placeholder="password"
+                class="form-control form-control-lg" formControlName="password" required />
+                       <div class="form-text text-danger"  *ngIf="Password.errors?.['required'] && Password.touched ">
+                            Password is required.
+                          </div>
+            </div>
+
+            <br>
+
+            <div class="btn-group">
+              <!-- Submit button -->
+              <div class="d-flex justify-content-center mx-2 mb-2 mb-lg-2">
+                <button type="submit" class="btn btn-success btn-sm btn-block" (click)="loginSubmit()"
+                  [disabled]="form.invalid">Login</button>
+              </div>
+
+
+              <!-- <div class="d-flex justify-content-center mx-2 mb-2 mb-lg-2 ">
+                <button type="submit" class="btn btn-primary btn-sm btn-block" [routerLink]="['']">Go Back</button>
+              </div> -->
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</section>
+</div>
+</div> -->
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright:
+    <a class="text-white">Online Shopping </a>
+  </div>
+  <!-- Copyright -->
+</footer>
